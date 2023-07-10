@@ -35,7 +35,7 @@ func (*Server) UpdateOrder(ctx context.Context, message *UpdateOrderRequest) (*U
 	log.Println("Order ID:", message.OrderId)
 	return &UpdateOrderResponse{
 		OrderId: message.OrderId,
-		Status: "shipped",
+		Status: message.Status,
 	}, nil
 }
 
