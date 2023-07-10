@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+message Product {
+    uint32 id = 1;
+    string name = 2;
+    string description = 3;
+    uint32 price = 4;
+}
+
+message CartItem {
+    uint32 user_id = 1;
+    uint32 product_id = 2;
+    uint32 quantity = 3;
+}
+
+message CreateOrderRequest {
+    repeated CartItem cart_items = 1;
+}
+
+message CreateOrderResponse {
+    uint32 order_id = 1;
+}
+
+message GetOrderRequest {
+    uint32 order_id = 1;
+}
+
+message GetOrderResponse {
+    uint32 order_id = 1;
+    uint32 user_id = 2;
+    repeated CartItem cart_items = 3;
+    uint32 total_price = 4;
+    string status = 5;
+}
+
+message UpdateOrderRequest {
+    uint32 order_id = 1;
+    string status = 2;
+}
+
+message UpdateOrderResponse {
+    uint32 order_id = 1;
+    string status = 2;
+}
+
+message DeleteOrderRequest {
+    uint32 order_id = 1;
+}
+
+message DeleteOrderResponse {
+    uint32 order_id = 1;
+}
