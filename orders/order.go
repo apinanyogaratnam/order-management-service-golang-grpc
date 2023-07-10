@@ -27,7 +27,7 @@ func (*Server) GetOrder(ctx context.Context, message *GetOrderRequest) (*GetOrde
 		UserId: 1,
 		CartItems: cartItems,
 		TotalPrice: 100,
-		Status: "created",
+		Status: ORDER_STATUS_CREATED,
 	}, nil
 }
 

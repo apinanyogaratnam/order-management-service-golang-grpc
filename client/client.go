@@ -59,7 +59,7 @@ func GetOrder(c orders.OrderServiceClient, orderId uint32) *orders.GetOrderRespo
 func UpdateOrder(c orders.OrderServiceClient, orderId uint32) *orders.UpdateOrderResponse {
 	updateOrderRequestMessage := orders.UpdateOrderRequest{
 		OrderId: orderId,
-		Status: "shipped",
+		Status: orders.ORDER_STATUS_SHIPPED,
 	}
 
 	updateOrderResponseMessage, err := c.UpdateOrder(context.Background(), &updateOrderRequestMessage)
